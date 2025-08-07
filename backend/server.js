@@ -8,7 +8,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: "https://xboy-profile-mandb-client.onrender.com || http://localhost:5173",
+  origin: "https://xboy-profile-mandb-client.onrender.com/",
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
