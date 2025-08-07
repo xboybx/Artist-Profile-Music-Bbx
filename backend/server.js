@@ -8,11 +8,21 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: ["https://xboy-profile-mandb-client.onrender.com", "http://localhost:5173"],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+app.get('/', (req, res) => {
+  const healthStatus = {
+    status: 'ok',
+    uptime: process.uptime(),
+    message: 'Server is running fine',
+    timestamp: Date.now()
+  };
+  res.status(200).json(healthStatus);
+});
 app.use(express.json());
 
 // Connect to MongoDB with updated options
