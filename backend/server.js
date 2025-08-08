@@ -27,8 +27,6 @@ app.use(express.json());
 
 // Connect to MongoDB with updated options
 mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
   serverSelectionTimeoutMS: 5000,
   socketTimeoutMS: 45000,
 })
